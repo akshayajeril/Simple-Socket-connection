@@ -1,0 +1,14 @@
+<div class="card bg-light mb-3" style="max-width: 65rem;margin:0 auto;">
+    <div class="card-header">Chat Application</div>
+    <div class="card-body">
+      <!-- <h5 class="card-title">Light card title</h5> -->
+      <p class="card-text" *ngFor = "let message of messageList">
+       <b>{{message.name}}</b> : {{message.message}}
+      </p>
+    </div>
+    <div class="card-footer bg-transparent border-secondary" style="display: flex;">
+        <input [(ngModel)]="user" class="form-control" style="width: 10%;margin-right: 10px;" placeholder="Name">
+        <input [(ngModel)]="newMessage" class="form-control" style="width: 70%;margin-right: 10px;" (keyup)="$event.keyCode == 13 && sendMessage()" placeholder="Type your message">
+<button (click)="sendMessage()" class="btn btn-primary">Send Message</button>
+    </div>
+  </div>
